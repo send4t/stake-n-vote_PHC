@@ -17,7 +17,11 @@ import { Input } from "../ui/input"
 import { Label } from "../ui/label"
 import { Switch } from "../ui/switch"
 
-export default function StakingRewardCalculator({ price }: { price: number | null }) {
+interface StakingRewardCalculatorProps {
+  price: number | null;
+}
+
+export default function StakingRewardCalculator({ price }: StakingRewardCalculatorProps) {
   const { data: accountBalance } = useAccountBalances()
   const { activeChain } = useInkathon()
   const APY = 0.15 // 15% APY this should be coming from chain API
@@ -52,14 +56,14 @@ export default function StakingRewardCalculator({ price }: { price: number | nul
   }
 
   return (
-    <div className="flex flex-col text-white gap-4">
+    <div className="flex flex-col gap-4 text-black">
       <Button
         color="danger"
         onClick={() => accountBalance && setStakeAmount(parseBN(accountBalance.freeBalance.toString(), tokenDecimals))}
       >
         Összes elérhető DOT stake-elése
       </Button>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 text-black">
         <Label htmlFor="stake-amount" className="font-bold">
           Stake-be helyezett mennyiség (DOT)
         </Label>
@@ -68,6 +72,7 @@ export default function StakingRewardCalculator({ price }: { price: number | nul
           placeholder="Írd be mennyit szeretnél stake-be helyezni"
           value={stakeAmount.toString()}
           onChange={(e: ChangeEvent<HTMLInputElement>) => setStakeAmount(Number(e.target.value))}
+          className="w-full bg-white text-black p-2 rounded" // Add custom styles here
         />
       </div>
       <div className="flex items-center space-x-2">
@@ -75,12 +80,12 @@ export default function StakingRewardCalculator({ price }: { price: number | nul
           checked={isCompounding}
           onCheckedChange={(val) => setIsCompounding(val)}
         />
-        <Label htmlFor="auto-compounding" className="font-bold">
+        <Label htmlFor="auto-compounding" className="font-bold text-black">
           Automatikus újra stake-elés (kamatos kamat 4 óránként újraszámolva)
         </Label>
       </div>
 
-      <div className="flex flex-col gap-2 text-white">
+      <div className="flex flex-col gap-2 text-black">
         <div>Jutalmak 1 nap után: {formatCurrency(rewards.daily, 'DOT')} / {formatCurrency(rewards.daily, 'USD')}</div>
         <div>Jutalmak 1 hónap után: {formatCurrency(rewards.monthly, 'DOT')} / {formatCurrency(rewards.monthly, 'USD')}</div>
         <div>Jutalmak 1 év után: {formatCurrency(rewards.yearly, 'DOT')} / {formatCurrency(rewards.yearly, 'USD')}</div>

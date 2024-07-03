@@ -9,12 +9,12 @@ import React, {
 } from "react"
 import {
   SubstrateWallet,
-  allSubstrateWallets,
   useInkathon,
 } from "@scio-labs/use-inkathon"
 
 import { ModalDelegate } from "@/components/delegate/modal-delegate"
 import { ModalStake } from "@/components/stake/modal-stake"
+import ModalCalc from "@/components/calculator/modal-calculator"  // Import the new calculator modal
 
 // Define the context shape
 interface AppContextType {
@@ -24,12 +24,12 @@ interface AppContextType {
   setIsStakingModalOpen: (isOpen: boolean) => void
   isDelegateModalOpen: boolean
   setIsDelegateModalOpen: (isOpen: boolean) => void
+  isCalcModalOpen: boolean
+  setIsCalcModalOpen: (isOpen: boolean) => void
   activeExtension: SubstrateWallet | undefined
   setActiveExtension: (wallet: SubstrateWallet | undefined) => void
   connectDropdownOpen: boolean
   setConnectDropdownOpen: (isOpen: boolean) => void
-  // activeWallet: string | null
-  // setActiveWallet: (wallet: string | null) => void
 }
 
 // Create the context with a default value
@@ -39,21 +39,11 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [isEffectTrue, setIsEffectTrue] = useState(false)
   const [isStakingModalOpen, _setIsStakingModalOpen] = useState(false)
   const [isDelegateModalOpen, _setIsDelegateModalOpen] = useState(false)
+  const [isCalcModalOpen, _setIsCalcModalOpen] = useState(false)  // Add state for calculator modal
   const [connectDropdownOpen, setConnectDropdownOpen] = useState(false)
-  const [activeExtension, setActiveExtension] = useState<
-    SubstrateWallet | undefined
-  >(undefined)
-  // const [activeWallet, setActiveWallet] = useState<string | null>(null)
+  const [activeExtension, setActiveExtension] = useState<SubstrateWallet | undefined>(undefined)
 
-  const {
-    connect,
-    accounts,
-    activeAccount,
-    activeExtension: _activeExtension,
-    activeChain,
-    setActiveAccount,
-    // setActiveAccount: _setActiveAccount,
-  } = useInkathon()
+  const { connect, accounts, activeAccount, activeExtension: _activeExtension, activeChain, setActiveAccount } = useInkathon()
 
   const setIsStakingModalOpen = (isOpen: boolean) => {
     _setIsDelegateModalOpen(false)
@@ -65,10 +55,14 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     _setIsDelegateModalOpen(isOpen)
   }
 
-  // Function to enable the effect
+  const setIsCalcModalOpen = (isOpen: boolean) => {  // Add setter for calculator modal
+    _setIsDelegateModalOpen(false)
+    _setIsStakingModalOpen(false)
+    _setIsCalcModalOpen(isOpen)
+  }
+
   const enableEffect = () => setIsEffectTrue(true)
 
-  // Effect to automatically disable after 1 second
   useEffect(() => {
     let timer: NodeJS.Timeout
     if (isEffectTrue) {
@@ -88,17 +82,18 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         setIsStakingModalOpen,
         isDelegateModalOpen,
         setIsDelegateModalOpen,
+        isCalcModalOpen,  // Provide the state for calculator modal
+        setIsCalcModalOpen,  // Provide the setter for calculator modal
         activeExtension,
         setActiveExtension,
         connectDropdownOpen,
         setConnectDropdownOpen,
-        // activeWallet,
-        // setActiveWallet,
       }}
     >
       {children}
       <ModalStake />
       <ModalDelegate />
+      <ModalCalc />  
     </AppContext.Provider>
   )
 }

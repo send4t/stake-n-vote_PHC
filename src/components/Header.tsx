@@ -90,6 +90,14 @@ function MobileNavigation() {
             <MobileNavLink href="#pricing">Pricing</MobileNavLink>
             <hr className="m-2 border-slate-300/40" />
             <MobileNavLink href="/login">Sign in</MobileNavLink>
+            <div className="mt-6 text-center">
+              <a
+                href="https://polkadothungary.net"
+                className="text-base font-semibold leading-7 text-gray-900 hover:underline"
+              >
+                vissza a blogra
+              </a>
+            </div>
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>
@@ -110,29 +118,6 @@ export function Header() {
         className="mx-auto flex max-w-7xl items-center justify-between p-4 px-6 lg:px-8"
         aria-label="Global"
       >
-        {/* <div className="flex flex-1">
-          <div className="hidden lg:flex lg:gap-x-12">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-sm font-semibold leading-6 text-gray-900"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-          <div className="flex lg:hidden">
-            <button
-              type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-              onClick={() => setMobileMenuOpen(true)}
-            >
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-        </div> */}
         <a href="/" className="-m-1.5 p-1.5 hover:animate-spin_right">
           <span className="sr-only">The Kus</span>
           <Image
@@ -141,7 +126,13 @@ export function Header() {
             className="inline-block w-auto h-12"
           />
         </a>
-        <div className="flex flex-1 justify-end">
+        <div className="flex items-center justify-end gap-x-4">
+          <a
+            href="https://polkadothungary.net"
+            className="hidden text-base font-semibold leading-7 text-gray-900 hover:underline lg:block"
+          >
+            vissza a blogra
+          </a>
           <ConnectButton />
         </div>
       </nav>
@@ -192,6 +183,14 @@ export function Header() {
                 {item.name}
               </a>
             ))}
+          </div>
+          <div className="mt-6 text-center">
+            <a
+              href="https://polkadothungary.net"
+              className="text-base font-semibold leading-7 text-gray-900 hover:underline"
+            >
+              vissza a blogra
+            </a>
           </div>
         </Dialog.Panel>
       </Dialog>

@@ -51,7 +51,7 @@ export function AmountInput({
           />
           <AvailableBalance
             params={activeAccount?.address}
-            className="ml-0.5"
+            className="ml-0.5 text-black"
           />
         </div>
         <span className="flex h-10 w-12 items-center px-2 text-sm font-bold">

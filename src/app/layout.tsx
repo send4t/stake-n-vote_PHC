@@ -47,18 +47,18 @@ export default function RootLayout({
     >
       <body className="flex h-full flex-col">
         <Providers>{children}</Providers>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-7RG8GF0LMC" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-FNKNFVZVCN" />
         <Script id="google-analytics">
           {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-7RG8GF0LMC');
+
+          gtag('config', 'G-FNKNFVZVCN');
         `}
         </Script>
       </body>
       <Toaster />
-      <GoogleAnalytics gaId="G-7RG8GF0LMC" />
     </html>
   )
 }

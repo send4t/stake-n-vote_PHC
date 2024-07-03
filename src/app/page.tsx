@@ -20,7 +20,7 @@ export default async function Home() {
           <PrimaryFeatures />
         </Suspense>
         
-        <CallToAction />
+        {/*<CallToAction />*/}
         {/* <SectionSpaceMonkeys /> */}
         {/* <Faqs /> */}
       </main>
