@@ -38,6 +38,7 @@ export function ModalDelegate() {
                       className="underline"
                       href="https://t.me/polkadothungary"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       Csatlakozz a Telegram csatornánkhoz
                     </a>{" "}
