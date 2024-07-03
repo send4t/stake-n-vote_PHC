@@ -184,7 +184,7 @@ export function Header() {
               </a>
             ))}
           </div>
-          <div className="mt-6 text-center">
+          <div className="mt-5 text-center">
             <a
               href="https://polkadothungary.net"
               className="text-base font-semibold leading-7 text-gray-900 hover:underline"
