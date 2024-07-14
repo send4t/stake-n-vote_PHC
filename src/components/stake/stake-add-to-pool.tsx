@@ -144,7 +144,7 @@ export function MaybeAddToPool({
         <>
           <Tooltip
             content={`A ${humanReadableMinNominatorBond} ${tokenSymbol}
-                 alatti stake-ek nem rendelkeznek szavazati erővel, amíg nomination pool-ban töltött idő alatt`}
+                 alatti stake-ek nem rendelkeznek szavazati erővel nomination pool-ban töltött idő alatt`}
             size="sm"
             color="warning"
             radius="sm"

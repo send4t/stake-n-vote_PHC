@@ -20,7 +20,7 @@ const TrackSelector = ({
         onChange={onChange}
         defaultOptions={options}
         options={options}
-        placeholder="Select tracks for delegating your votes..."
+        placeholder="Válaszd ki milyen témakörökben szeretnéd delegálni szavazatod..."
         emptyIndicator={
           <p className="text-center text-lg leading-10 text-gray-600 dark:text-gray-400">
             no results found.

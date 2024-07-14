@@ -66,11 +66,11 @@ export function Footer() {
             </Link> */}
           </div>
           <p className="mt-6 text-sm text-slate-500 sm:mt-0">
-           Forked from  
+           Forked from   
           <a href="https://github.com/TheKusamarian/stake-n-vote" className="text-blue-500 underline">
-           Stake-n-Vote
+            Stake-n-Vote 
           </a> 
-           by TheKus &copy; {new Date().getFullYear()} 
+            by TheKus &copy; {new Date().getFullYear()} 
           </p>
         </div>
       </Container>

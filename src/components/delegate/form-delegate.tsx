@@ -6,6 +6,8 @@ import { findChangedItem, parseBN } from "@/util"
 import { Slider } from "@nextui-org/slider"
 import { BN_ZERO, bnToBn } from "@polkadot/util"
 import { useInkathon } from "@scio-labs/use-inkathon"
+import { FaInfoCircle } from "react-icons/fa";
+import { Tooltip } from "@nextui-org/tooltip"
 
 import { kusamaRelay } from "@/config/chains"
 import {
@@ -25,6 +27,7 @@ import { Input } from "../ui/input"
 import { Label } from "../ui/label"
 import { Option } from "../ui/multiple-selector"
 import { Switch } from "../ui/switch"
+
 
 // const ALL_TRACKS_ID = 9999
 // const ALL_TRACKS_OPTION = {
@@ -166,6 +169,14 @@ export default function FormDelegate() {
           <Label htmlFor="airplane-mode" className="font-bold">
             Összes témakör
           </Label>
+          <Tooltip
+          content="A témakörök különböző döntéshozatali területek, amelyekben delegálhatod a szavazati jogaidat."
+          color="warning"
+        >
+          <span>
+            <FaInfoCircle size={18} />
+          </span>
+        </Tooltip>
         </div>
 
         {!isAllSelected && (
