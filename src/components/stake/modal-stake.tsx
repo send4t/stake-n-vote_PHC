@@ -71,11 +71,11 @@ export function ModalStake() {
         )}
         <DialogHeader>
           {/* @ts-ignore */}
-          <DialogTitle>Stake {activeChain?.tokenSymbol}</DialogTitle>
+          <DialogTitle>Stake-elés {activeChain?.tokenSymbol}</DialogTitle>
           <DialogDescription>
             {/* @ts-ignore */}
-            Here you can stake your {activeChain?.tokenSymbol} to earn rewards
-            and secure the Polkadot network.
+            Itt tudod stake-elni {activeChain?.tokenSymbol} tokened, hogy jutalmakat 
+            szerezz és biztosítsd a Polkadot hálózatát.
           </DialogDescription>
         </DialogHeader>
         <div className="flex flex-1 flex-col">
@@ -221,12 +221,12 @@ function renderStakeContent(props: {
 
   return (
     <p>
-      Something went wrong{" "}
+      Valami nem sikerült{" "}
       <a
         className="cursor-pointer text-danger"
         onClick={() => window.location.reload()}
       >
-        Try again
+        Probáld újra
       </a>
       .
     </p>
@@ -301,11 +301,11 @@ function Success() {
   return (
     <>
       <p className="text-lg font-semibold">
-        🔥 Looks like you&apos;re already staking with The Kus!
+        🔥 Úgy látszik már a Polkadot Hungary Pool-ban sake-elsz!
       </p>
       <Link color="danger" href="?feature=delegate#features" scroll={false}>
         <Button className="mt-4" onClick={() => setIsDelegateModalOpen(true)}>
-          Now delegate your voting power
+          Add nekünk a szavazati erődet.
         </Button>
       </Link>
     </>
@@ -322,7 +322,7 @@ function NoFunds({
   return (
     <>
       <p>
-        Deposit {tokenSymbol} to your account or buy {tokenSymbol} via
+        Utalj át {tokenSymbol} tokent-t a számládra vagy vásárolj {tokenSymbol} tokent-t 
       </p>
       <div className="mt-4 flex items-center gap-2">
         <a href="https://global.transak.com/">
@@ -333,7 +333,7 @@ function NoFunds({
             height={50}
           />
         </a>{" "}
-        or
+        vagy
         <a href="https://banxa.com/">
           <Image
             src="banxa.svg"
@@ -343,7 +343,7 @@ function NoFunds({
           />
         </a>
       </div>
-      <p className="mt-4">to start staking with the Kus</p>
+      <p className="mt-4">, hogy elkezdhess stake-elni velünk.</p>
     </>
   )
 }

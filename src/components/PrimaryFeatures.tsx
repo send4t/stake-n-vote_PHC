@@ -26,8 +26,8 @@ export function PrimaryFeatures() {
       className="relative overflow-hidden bg-gradient-to-br from-primary-500 to-teal-500 md:pb-10 pt-20 sm:py-32"
     >
       <Container className="b relative">
-        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
-          <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl text-center">
+        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none pt-10">
+          <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl text-center mt">
             DOT tokened dolgoztasd a Polkadot Hungary-vel!
           </h2>
         </div>

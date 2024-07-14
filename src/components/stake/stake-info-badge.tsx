@@ -26,13 +26,13 @@ const StakingInfoBadge = ({
   const badgeClass = `text-xs text-primary-500 ${className}`
 
   if (isLoading) {
-    return <div className={badgeClass}>Loading staking information...</div>
+    return <div className={badgeClass}>Stake információk betöltése...</div>
   }
 
   if (error) {
     return (
       <div className={badgeClass}>
-        Error loading staking information: {error.message}
+       Valami hiba történt az információk betöltése közben: {error.message}
       </div>
     )
   }
@@ -60,7 +60,7 @@ const StakingInfoBadge = ({
   if (isStakingInPool) {
     return (
       <div className={badgeClass}>
-        Staking{" "}
+        Stake-elsz{" "}
         {formatBalance(inPool, {
           withUnit: false,
           // @ts-ignore
@@ -69,7 +69,7 @@ const StakingInfoBadge = ({
           forceUnit: activeChain?.tokenSymbol,
         }).slice(0, -2)}{" "}
         {/*@ts-ignore */}
-        {activeChain?.tokenSymbol} in pool
+        {activeChain?.tokenSymbol} token-t poolban
       </div>
     )
   }
@@ -77,7 +77,7 @@ const StakingInfoBadge = ({
   return (
     <div className={badgeClass}>
       {/*@ts-ignore */}
-      Not staking {activeChain?.tokenSymbol} yet
+      Még nem stake-elsz {activeChain?.tokenSymbol} tokent
     </div>
   )
 }

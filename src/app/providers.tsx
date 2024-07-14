@@ -21,7 +21,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
   return (
     <UseInkathonProvider
-      appName="The Kus"
+      appName="Polkadot Hungary Community egyszerű stake-elés"
       defaultChain={polkadotRelay}
       supportedWallets={supportedWallets}
     >

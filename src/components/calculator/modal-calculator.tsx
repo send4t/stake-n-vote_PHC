@@ -54,6 +54,8 @@ export default function ModalCalc() {
   } = CHAIN_CONFIG[activeChain?.network || "Polkadot"] || {}
 
   const humanFreeBalance = accountBalance ? parseBN(accountBalance.freeBalance, tokenDecimals) : 0
+  const displayBalance = humanFreeBalance.toFixed(2) || 'N/A'
+  const displayTokenSymbol = tokenSymbol || 'DOT'
 
   if (priceError) {
     return <div>Nem sikerült lekérni a Polkadot árát: {priceError.message}</div>
@@ -63,22 +65,18 @@ export default function ModalCalc() {
     <Dialog open={isCalcModalOpen} onOpenChange={setIsCalcModalOpen}>
       <DialogContent className="sm:max-w-[600px] border-4 border-primary-500 bg-gradient-to-br from-primary-500/50 to-teal-500/50">
         <DialogHeader>
-          {/* @ts-ignore */}
           <DialogTitle>Számold ki a Polkadot staking jutalmaidat</DialogTitle>
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="flex flex-1 flex-col">
-            {activeAccount ? (
-              <div className="flex text-white flex-col gap-1">
-                <span className="text-xs text-gray-300">
-                  {humanFreeBalance.toFixed(2)} {tokenSymbol} elérhető
-                  {price && ` - Polkadot ár: $${price.toFixed(2)}`}
-                </span>
-                <StakingRewardCalculator price={price} />
-              </div>
-            ) : (
-              <NotConnected />
-            )}
+            <div className="flex text-white flex-col gap-1">
+              <span className="text-xs text-gray-300">
+                {displayBalance} {displayTokenSymbol} elérhető
+                {price && ` - Polkadot ár: $${price.toFixed(2)}`}
+              </span>
+              <StakingRewardCalculator price={price} />
+            </div>
+            {!activeAccount && <NotConnected />}
           </div>
         </div>
         <DialogFooter className="flex-row justify-center sm:justify-center text-center">

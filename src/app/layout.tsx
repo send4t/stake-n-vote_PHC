@@ -13,10 +13,10 @@ import { Toaster } from "@/components/ui/sonner"
 
 export const metadata: Metadata = {
   title: {
-    template: "%s - The Kus",
-    default: "The Kus - Independet News Resource for Polkadot",
+    template: "Polkadot Hungary Community egyszerű Polkadot stake-elés",
+    default: "Polkadot Hungary Community egyszerű Polkadot stake-elés",
   },
-  description: "Latest news. Staking. Delegating",
+  description: "Egyszerű Polkadot nominálás és stake-elés",
 }
 
 const inter = Inter({

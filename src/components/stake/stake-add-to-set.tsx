@@ -25,8 +25,8 @@ export function AddKusToSet({
 }) {
   return (
     <>
-      <p>Great! You are already staking your {tokenSymbol}</p>
-      <p>Would you like to add The Kus to your nominator set?</p>
+      <p>Remek! Már stake-eled a {tokenSymbol} token-ed</p>
+      <p>Szeretnéd hozzáadni a nominator készletedhez?</p>
       <Button
         onClick={async () => {
           const tx = await nominateTx(
@@ -39,7 +39,7 @@ export function AddKusToSet({
         }}
         className="mt-4"
       >
-        Add Kus to nominator set
+        Hozzáadom a Polkadot Hungary-t a nominator készletemhez.
       </Button>
     </>
   )

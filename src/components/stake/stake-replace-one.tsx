@@ -56,8 +56,7 @@ export function ReplaceOneWithKus({
   return (
     <div className="flex flex-col gap-3">
       <p>
-        ⚠️ Your nominator set is full! Select one nomination to replace with Kus
-        Validation
+        ⚠️ A nomináló készleted tele van. Válasz egyet a meglévők közül, amelyiket lecserélnéd a Polkadot Hungary validátorára.
       </p>
 
       <RadioGroup color="danger" value={selected} onValueChange={setSelected}>
@@ -84,7 +83,7 @@ export function ReplaceOneWithKus({
         disabled={!selected}
         size="lg"
       >
-        Replace above with Kus
+        Lecserélem a fentit a Polkadot Hungary validátorára.
       </Button>
     </div>
   )

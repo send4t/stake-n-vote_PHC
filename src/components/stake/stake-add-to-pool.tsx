@@ -135,7 +135,7 @@ export function MaybeAddToPool({
             className="h-10 border-2 w-full md:w-auto mt-2 md:mt-0"
             disabled={!isAccountBalanceSuccess}
           >
-            Stake Max
+            Maximum stake-elés
           </Button>
         </AmountInput>
       </div>
@@ -143,8 +143,8 @@ export function MaybeAddToPool({
       {amountSmallerThanMinNominatorBond ? (
         <>
           <Tooltip
-            content={`Stakes under ${humanReadableMinNominatorBond} ${tokenSymbol}
-                stake do not have voting power while in nomination pools`}
+            content={`A ${humanReadableMinNominatorBond} ${tokenSymbol}
+                 alatti stake-ek nem rendelkeznek szavazati erővel, amíg nomination pool-ban töltött idő alatt`}
             size="sm"
             color="warning"
             radius="sm"
@@ -156,7 +156,7 @@ export function MaybeAddToPool({
               size="lg"
               className="mt-4 w-full"
             >
-              Stake with Nomination Pool
+              Stake-elek a nomination pool-ban
             </Button>
           </Tooltip>
         </>
@@ -167,7 +167,7 @@ export function MaybeAddToPool({
           // disabled={isDisabled}
           className="mt-4 w-full"
         >
-          Stake with Kus Validation and friends
+          Stake-elek a Polkadot Hungary validátorral.
         </Button>
       )}
     </form>
