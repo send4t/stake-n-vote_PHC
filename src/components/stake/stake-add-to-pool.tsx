@@ -122,7 +122,7 @@ export function MaybeAddToPool({
     <form>
       <div className="flex items-end flex-wrap">
         <AmountInput
-          label="Amount to stake"
+          label="Stake-elni kívánt mennyiség"
           value={stakeAmount?.toString() || ""}
           onChange={(e) => {
             const stakeAmount = parseFloat(e.target.value)

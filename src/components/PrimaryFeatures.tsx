@@ -3,6 +3,7 @@
 import { useInkathon } from "@scio-labs/use-inkathon"
 import Stake from "@w3f/polkadot-icons/keyline/Stake"
 import Delegate from "@w3f/polkadot-icons/keyline/Vote"
+import ProofOfStake from "@w3f/polkadot-icons/keyline/ProofOfStake"
 
 import { Container } from "@/components/Container"
 import { useApp } from "@/app/app-provider"
@@ -35,8 +36,8 @@ export function PrimaryFeatures() {
           className="mt-12"
           buttonClasses="h-20 w-20 rounded-full border-2 p-2 transition-all hover:rotate-6 hover:scale-105 hover:outline-2 sm:h-20 sm:w-20 md:h-32 md:w-32 md:p-3"
         />
-        <div className="mt-12 flex items-center gap-x-6 justify-center">
-          <div className="h-48 w-1/3 md:w-1/4 group">
+        <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2">
+          <div className="group">
             <Button
               className="h-auto w-full p-4 flex flex-col"
               onClick={() => {
@@ -52,12 +53,9 @@ export function PrimaryFeatures() {
                 {/* @ts-ignore */}
                 Stake-elj {activeChain?.tokenSymbol}-ot
               </div>
-              <p className="whitespace-normal font-normal text-sm mt-2 hidden group-hover:block transition-all">
-                Stake-eld tokeneid, szerezz jutalmakat és biztosítsd a Polkadot hálózatát.
-              </p>
             </Button>
           </div>
-          <div className="h-48 w-1/3 md:w-1/4 group">
+          <div className="group">
             <Button
               className="h-auto w-full p-4 flex flex-col"
               onClick={() => {
@@ -77,23 +75,22 @@ export function PrimaryFeatures() {
                 {/* @ts-ignore */}
                 Delegálj {activeChain?.tokenSymbol} szavazatot
               </div>
-              <p className="whitespace-normal font-normal text-sm mt-2 hidden group-hover:block">
-                A szavazatod számít. Delegáld szavazati erődet hozzánk és formáld velünk a Polkadot jövőjét.
-              </p>
             </Button>
           </div>
-          <div className="h-48 w-1/3 md:w-1/4 group">
+          <div className="group">
             <Button
               className="h-auto w-full p-4 flex flex-col"
               onClick={() => setIsCalcModalOpen(true)}  // Always open the calculator modal
             >
               <div className="flex items-center justify-center">
+              <ProofOfStake
+                  stroke="#fff"
+                  className="mr-2 inline-block"
+                  width={25}
+                />{" "}
                 {/* @ts-ignore */}
                 Számold ki a staking jutalmaidat
               </div>
-              <p className="whitespace-normal font-normal text-sm mt-2 hidden group-hover:block">
-                Használd kalkulátorunkat, hogy megnézd, mennyit kereshetsz a Polkadot staking segítségével.
-              </p>
             </Button>
           </div>
         </div>

@@ -68,7 +68,7 @@ export default function ModalCalc() {
         <div className="grid gap-4 py-4">
           <div className="flex flex-1 flex-col">
             <div className="flex text-white flex-col gap-1">
-              <span className="text-xs text-gray-300">
+              <span className="text-xs text-black">
                 {activeAccount 
                   ? `${displayBalance} ${displayTokenSymbol} elérhető ${price && ` - Polkadot ár: $${price.toFixed(2)}`}`
                   : 'Ha csatlakoztatod a tárcád, látni fogod mennyi DOT-ot stake-elhetsz'
