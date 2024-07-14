@@ -2,11 +2,9 @@
 
 import { useState, useEffect } from "react"
 import { useInkathon } from "@scio-labs/use-inkathon"
-
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -54,7 +52,7 @@ export default function ModalCalc() {
   } = CHAIN_CONFIG[activeChain?.network || "Polkadot"] || {}
 
   const humanFreeBalance = accountBalance ? parseBN(accountBalance.freeBalance, tokenDecimals) : 0
-  const displayBalance = humanFreeBalance.toFixed(2) || 'N/A'
+  const displayBalance = humanFreeBalance ? humanFreeBalance.toFixed(2) : 'N/A'
   const displayTokenSymbol = tokenSymbol || 'DOT'
 
   if (priceError) {
@@ -71,12 +69,14 @@ export default function ModalCalc() {
           <div className="flex flex-1 flex-col">
             <div className="flex text-white flex-col gap-1">
               <span className="text-xs text-gray-300">
-                {displayBalance} {displayTokenSymbol} elérhető
-                {price && ` - Polkadot ár: $${price.toFixed(2)}`}
+                {activeAccount 
+                  ? `${displayBalance} ${displayTokenSymbol} elérhető ${price && ` - Polkadot ár: $${price.toFixed(2)}`}`
+                  : 'Ha csatlakoztatod a tárcád, látni fogod mennyi DOT-ot stake-elhetsz'
+                }
               </span>
               <StakingRewardCalculator price={price} />
             </div>
-            {!activeAccount && <NotConnected />}
+           
           </div>
         </div>
         <DialogFooter className="flex-row justify-center sm:justify-center text-center">

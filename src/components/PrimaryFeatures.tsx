@@ -85,13 +85,7 @@ export function PrimaryFeatures() {
           <div className="h-48 w-1/3 md:w-1/4 group">
             <Button
               className="h-auto w-full p-4 flex flex-col"
-              onClick={() => {
-                if (activeAccount) {
-                  setIsCalcModalOpen(true)
-                } else {
-                  setConnectDropdownOpen(true)
-                }
-              }}
+              onClick={() => setIsCalcModalOpen(true)}  // Always open the calculator modal
             >
               <div className="flex items-center justify-center">
                 {/* @ts-ignore */}
