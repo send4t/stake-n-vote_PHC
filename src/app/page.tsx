@@ -17,7 +17,9 @@ export default async function Home() {
       <Header />
       <main>
         <Suspense fallback={<div>Loading...</div>}>
-          <PrimaryFeatures />
+          {/* <PrimaryFeatures /> important for main page*/}
+
+          Under Construction
         </Suspense>
         
         {/*<CallToAction />*/}
