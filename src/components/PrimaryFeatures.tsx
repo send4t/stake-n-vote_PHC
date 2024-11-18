@@ -29,7 +29,7 @@ export function PrimaryFeatures() {
       <Container className="b relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none pt-10">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl text-center mt">
-            DOT tokened dolgoztasd a Polkadot Hungary-vel!
+            DOT tokened delegáld a Polkadot Hungary-nek!
           </h2>
         </div>
         <ChainSwitch
@@ -37,24 +37,7 @@ export function PrimaryFeatures() {
           buttonClasses="h-20 w-20 rounded-full border-2 p-2 transition-all hover:rotate-6 hover:scale-105 hover:outline-2 sm:h-20 sm:w-20 md:h-32 md:w-32 md:p-3"
         />
         <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2">
-          <div className="group">
-            <Button
-              className="h-auto w-full p-4 flex flex-col"
-              onClick={() => {
-                if (activeAccount) {
-                  setIsStakingModalOpen(true)
-                } else {
-                  setConnectDropdownOpen(true)
-                }
-              }}
-            >
-              <div className="flex items-center justify-center">
-                <Stake stroke="#fff" className="mr-2 inline-block" width={25} />{" "}
-                {/* @ts-ignore */}
-                Stake-elj {activeChain?.tokenSymbol}-ot
-              </div>
-            </Button>
-          </div>
+         
           <div className="group">
             <Button
               className="h-auto w-full p-4 flex flex-col"
