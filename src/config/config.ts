@@ -6,10 +6,10 @@ export const CACHE_INVALIDATION_TIME = 60 * 30 // in seconds, equals 30min
 
 // Kusamarian Delegators
 export const POLKADOT_DELEGATOR =
-  '16DNbAdyy6QsTPdDDHL5gt7FaeAQ1UioJA6Pj7aUGJERveFd'
+  '13z9CiETVYCrxz3cghDuTyRGbaYQrwSyRnRcJX5iFbXvrwhT'
 
 export const KUSAMA_DELEGATOR =
-  'JHTfbt39EL1CcbKteN6hG5L5pWo9XWi9XFiyuS9q24cAc8u'
+  'Hgm7ELPfRmPKbHgGZCYEZGTjJX8VicXEnFKec7YAeFgAd4d'
 
 // Kusamarian Validators
 export const POLKADOT_VALIDATOR =
